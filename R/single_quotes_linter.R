@@ -11,7 +11,7 @@ single_quotes_linter <- function() {
     str_idx <- which(content$token == "STR_CONST")
     squote_matches <- which(re_matches(
       content[str_idx, "text"],
-      rex(start, single_quote, any_non_double_quotes, single_quote, end)
+      rex(start, double_quote, any_non_single_quotes, double_quote, end)
     ))
 
     lapply(
@@ -25,7 +25,7 @@ single_quotes_linter <- function() {
             line_number = line1,
             column_number = col1,
             type = "style",
-            message = "Only use double-quotes.",
+            message = "Only use single-quotes.",
             line = line,
             ranges = list(c(col1, col2))
           )
