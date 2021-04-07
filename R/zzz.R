@@ -92,7 +92,7 @@ str.lintr_function <- function(x, ...) {
 #' @export
 default_linters <- with_defaults(default = list(),
   assignment_linter,
-  object_name_linter("dotted.case"),
+  object_name_linter("dotted.case.mixed"),
   open_curly_linter,
   closed_curly_linter,
   function_left_parentheses_linter,
