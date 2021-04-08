@@ -309,7 +309,7 @@ style_regexes <- list(
   "snake_case"  = rex(start, maybe("."), some_of(lower, digit), any_of("_", lower, digit), end),
   "SNAKE_CASE"  = rex(start, maybe("."), some_of(upper, digit), any_of("_", upper, digit), end),
   "dotted.case" = rex(start, maybe("."), one_or_more(loweralnum), zero_or_more(dot, one_or_more(loweralnum)), end),
-  "dotted.case.mixed" = rex(start, maybe("."), one_or_more(alphanum), zero_or_more(dot, one_or_more(alphanum)), end),
+  "dotted.mixed.case" = rex(start, maybe("."), one_or_more(alphanum), zero_or_more(dot, one_or_more(alphanum)), end),
   "lowercase"   = rex(start, maybe("."), one_or_more(loweralnum), end),
   "UPPERCASE"   = rex(start, maybe("."), one_or_more(upperalnum), end)
 )
