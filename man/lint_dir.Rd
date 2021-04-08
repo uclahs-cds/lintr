@@ -8,9 +8,9 @@ lint_dir(
   path = ".",
   relative_path = TRUE,
   ...,
-  exclusions = NULL,
-  pattern = rex::rex(".", one_of("Rr"), or("", "html", "md", "nw", "rst", "tex", "txt"),
-    end),
+  exclusions = list("renv", "packrat"),
+  pattern = rex::rex(".", one_of("Rr"), or("", "html", "md", "nw", "rst", "tex",
+    "txt"), end),
   parse_settings = TRUE
 )
 }
@@ -32,7 +32,7 @@ package path.}
 the extensions .R, .Rmd, .Rnw, .Rhtml, .Rrst, .Rtex, .Rtxt allowing for
 lowercase r (.r, ...)}
 
-\item{parse_settings}{whether to try and parse the settings}
+\item{parse_settings}{whether to try and parse the settings.}
 }
 \value{
 A list of lint objects.
@@ -46,7 +46,7 @@ Apply one or more linters to all of the R files in a directory
   lint_dir(
     linters = list(semicolon_terminator_linter())
     cache = TRUE,
-    exclusions = list("inst/doc/creating_linters.R" = 1, "inst/example/bad.R")
+    exclusions = list("inst/doc/creating_linters.R" = 1, "inst/example/bad.R", "renv")
   )
 }
 }
